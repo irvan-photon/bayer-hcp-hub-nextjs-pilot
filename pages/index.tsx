@@ -41,13 +41,13 @@ export async function getStaticProps(
   context
 ): Promise<GetStaticPropsResult<IndexPageProps>> {
   const nodes = await drupal.getResourceCollectionFromContext<DrupalNode[]>(
-    "node--article",
+    "content--article",
     context,
     {
       params: {
-        "filter[status]": 1,
-        "fields[node--article]": "title,path,field_image,uid,created",
-        include: "field_image,uid",
+        // "filter[status]": 1,
+        // "fields[content--article]": "title,path,field_image,uid,created",
+        // include: "field_image,uid",
         sort: "-created",
       },
     }
