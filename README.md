@@ -13,3 +13,16 @@ A simple starter for building your site with Next.js and Drupal.
 ## Documentation
 
 See https://next-drupal.org
+
+## Naming Convention
+
+To make things easy for naming files, components, functions, etc. follow the following guidelines when developing in this repository.
+
+```
+Component Files - UpperCamelCase.tsx
+Library Files - lower-kebab-case.ts
+Functions - lowerCamelCase()
+Static Variables - UPPER_CASE
+Dynamic Variables - lowerCamelCase
+CSS Class Names - .lower-kebab-case
+```

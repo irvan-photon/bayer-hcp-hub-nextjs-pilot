@@ -7,10 +7,10 @@ import { NodeArticle } from "components/node--article"
 import { NodeBasicPage } from "components/node--basic-page"
 import { Layout } from "components/layout"
 
-const RESOURCE_TYPES = ["node--page", "node--article"]
+const RESOURCE_TYPES = ["content--basic_page", "content--article"]
 
 interface NodePageProps {
-  resource: DrupalNode
+  resource: DrupalNode | any;
 }
 
 export default function NodePage({ resource }: NodePageProps) {
@@ -22,8 +22,8 @@ export default function NodePage({ resource }: NodePageProps) {
         <title>{resource.title}</title>
         <meta name="description" content="A Next.js site powered by Drupal." />
       </Head>
-      {resource.type === "node--page" && <NodeBasicPage node={resource} />}
-      {resource.type === "node--article" && <NodeArticle node={resource} />}
+      {resource.type === "content--basic_page" && <NodeBasicPage node={resource} />}
+      {resource.type === "content--article" && <NodeArticle node={resource} />}
     </Layout>
   )
 }
@@ -38,50 +38,53 @@ export async function getStaticPaths(context): Promise<GetStaticPathsResult> {
 export async function getStaticProps(
   context
 ): Promise<GetStaticPropsResult<NodePageProps>> {
-  const path = await drupal.translatePathFromContext(context)
+  // Use this ISR once we start working on dynamic data
 
-  if (!path) {
-    return {
-      notFound: true,
-    }
-  }
+  // const path = await drupal.translatePathFromContext(context)
 
-  const type = path.jsonapi.resourceName
+  // if (!path) {
+  //   return {
+  //     notFound: true,
+  //   }
+  // }
 
-  let params = {}
-  if (type === "node--article") {
-    params = {
-      include: "field_image,uid",
-    }
-  }
+  // const type = path.jsonapi.resourceName
 
-  const resource = await drupal.getResourceFromContext<DrupalNode>(
-    path,
-    context,
-    {
-      params,
-    }
-  )
+  // let params = {}
+  // if (type === "content--article") {
+  //   params = {
+  //     include: "field_image,uid",
+  //   }
+  // }
+
+  // const resource = await drupal.getResourceFromContext<DrupalNode>(
+  //   path,
+  //   context,
+  //   {
+  //     params,
+  //   }
+  // )
 
   // At this point, we know the path exists and it points to a resource.
   // If we receive an error, it means something went wrong on Drupal.
   // We throw an error to tell revalidation to skip this for now.
   // Revalidation can try again on next request.
-  if (!resource) {
-    throw new Error(`Failed to fetch resource: ${path.jsonapi.individual}`)
-  }
+  // if (!resource) {
+  //   throw new Error(`Failed to fetch resource: ${path.jsonapi.individual}`)
+  // }
 
   // If we're not in preview mode and the resource is not published,
   // Return page not found.
-  if (!context.preview && resource?.status === false) {
-    return {
-      notFound: true,
-    }
-  }
+  // if (!context.preview && resource?.status === false) {
+  //   return {
+  //     notFound: true,
+  //   }
+  // }
 
   return {
     props: {
-      resource,
+      resource : {},
     },
+    revalidate: 10,
   }
 }
