@@ -4826,6 +4826,25 @@ base64-js@^1.0.2, base64-js@^1.3.1:
   resolved "https://registry.npmjs.org/base64-js/-/base64-js-1.5.1.tgz"
   integrity sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==
 
+"bayer-component-library@file:../bayer-component-library":
+  version "0.0.0"
+  resolved "file:../bayer-component-library"
+  dependencies:
+    "@element/react-components" latest
+    "@element/shared" latest
+    "@element/themes" latest
+    "@material/banner" "^11.0.0"
+    focus-trap-react "^10.1.4"
+    lodash "^4.17.21"
+    nanoid "^5.0.3"
+    react "^18.2.0"
+    react-autosuggest "^10.1.0"
+    react-dom "^18.2.0"
+    react-html-map "^0.1.1"
+    react-i18next "^13.5.0"
+    react-player "^2.13.0"
+    usehooks-ts "^2.9.1"
+
 big-integer@^1.6.44:
   version "1.6.52"
   resolved "https://registry.npmjs.org/big-integer/-/big-integer-1.6.52.tgz"
@@ -7279,7 +7298,7 @@ neo-async@^2.6.0, neo-async@^2.6.2:
   resolved "https://registry.npmjs.org/neo-async/-/neo-async-2.6.2.tgz"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
 
-next-drupal@^1.5.0:
+next-drupal@^1.6.0:
   version "1.6.0"
   resolved "https://registry.npmjs.org/next-drupal/-/next-drupal-1.6.0.tgz"
   integrity sha512-IRHgcpidXj45jicVl2wEp2WhyaV384rfubxxWopgbmo4YKYvIrg0GtPj3EQNuuX5/EJxyZcULHmmhSXFSidlpg==

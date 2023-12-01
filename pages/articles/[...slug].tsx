@@ -41,7 +41,6 @@ export async function getStaticProps(
   // Use this ISR once we start working on dynamic data
 
   console.log('context', context)
-  // const path = await drupal.translatePathFromContext(context)
   const path = await drupal.translatePathFromContext(
     context,
     {

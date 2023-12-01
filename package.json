@@ -15,8 +15,9 @@
     "@storybook/react": "^7.5.3",
     "@tailwindcss/typography": "^0.5.8",
     "aws-amplify": "^6.0.5",
+    "bayer-component-library": "file:../bayer-component-library",
     "next": "^13",
-    "next-drupal": "^1.5.0",
+    "next-drupal": "^1.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sharp": "^0.31.2"
